@@ -1,0 +1,16 @@
+.lc-menu(data-mobile-acc)
+  .lc-menu__head.js-mobile-acc(data-mobile-acc-btn) Мой личный кабинет
+    .mobile-acc-btn
+      +icon('arr-footer')
+  .lc-menu__body(data-mobile-acc-dd)
+    .lc-menu__name Коваленко Екатерина Николаевна
+    .lc-menu__company Общество с ограниченной ответственностью «ЗИКО»
+    ul.lc-menu__links
+      li
+        a(href="#").lc-menu__links-item._active Персональные данные
+          +icon('user')
+      li
+        a(href="#").lc-menu__links-item Мои заказы
+          +icon('order')
+    a(href="#").lc-menu__links-item Выйти из Личного кабинета
+      +icon('exit')

@@ -1,0 +1,37 @@
+.basket-comment {
+  border: 1px solid $border;
+
+  &__form {
+    padding: toVw(30) toVw(30) toVw(10);
+
+    @include sm-block() {
+      padding: toVw(15);
+    }
+  }
+
+  &__result {
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: toVw(10);
+    }
+
+    &-field {
+      @include font(16);
+    }
+
+    &-value {
+      @include font(16);
+      font-weight: 500;
+    }
+  }
+
+  .form-input__item {
+    width: 100%;
+    margin: 0 0 toVw(20);
+
+    @include sm-block() {
+      margin-bottom: toVw(10);
+    }
+  }
+}

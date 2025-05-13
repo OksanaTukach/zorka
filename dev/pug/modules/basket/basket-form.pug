@@ -1,0 +1,25 @@
+.basket-form
+  form(action="").form-input
+    .form-input__item.w33.required--input
+      p ФИО контактного лица
+      input(type="text" value="Коваленко Екатерина Николаевна")
+    .form-input__item.w33.required--input
+      p Страна
+      input(type="text" value="Республика Беларусь")
+    .form-input__item.w33.required--input
+      p Город
+      input(type="text" value="Минск")
+    .form-input__item.w33.required--input.input--mask--required.js-phone
+      p Телефон
+      .input-country
+        select.styler.js-value.no-style
+          option(data-mask='(99) 999-99-99' data-value='(99) 999-99-99' data-placeholder='(__) ___-__-__' data-img="") +375
+          option(data-mask='(999) 999-99-99' data-value='(999) 999-99-99' data-placeholder='(___) ___-__-__ ' data-img="" ) +7
+          option.no-mask Другая
+        input(type='tel' data-mask='(99) 999-99-99' data-placeholder='(__) ___-__-__' placeholder='(__) ___-__-__').input--main.js-value
+        input(type='tel').input--hidden
+    .form-input__item.w33.required--input
+      p Email
+      input(type="email" value="info_help@ziko.by")
+    .form-input__item._no-text-label.w33
+      input(type="submit" value="Оформить заказ").form-input__btn.required--sbmt

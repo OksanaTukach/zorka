@@ -1,0 +1,102 @@
+.cl {
+    &-wrp {
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+        border-left: 1px solid #E3E3E3;
+        @include xxs-block(){
+            grid-template-columns:repeat(2, 1fr);
+        }
+    }
+    &-item.mp-ct-item {
+        border-bottom: 1px solid #E3E3E3;
+        @include xxs-block(){
+            padding: toVw(24) toVw(5) ;
+        }
+        .name {
+            @include xmd-block(){
+                font-size: toVw(16);
+            }
+            @include xxs-block(){
+                font-size: toVw(12);
+                margin-bottom: toVw(10);
+            }
+        }
+        .info {
+            @include xmd-block(){
+                font-size: toVw(14);
+            }
+            @include xxs-block(){
+                font-size: toVw(11);
+                line-height: 1;
+                margin-bottom: toVw(6);
+            }
+            span {
+                @include xmd-block(){
+                    font-size: toVw(14);
+                }
+                @include xxs-block(){
+                    font-size: toVw(11);
+                    line-height: 1;
+                }
+            }
+        }
+        .img {
+            img {
+                max-width: toVw(110);
+            }
+        }
+    }
+    &-next {
+        padding: toVw(78) toVw(15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $grey;
+        border: 1px solid #E3E3E3;
+        border-top: none ;
+        @include xmd-block(){
+            padding: toVw(40) toVw(15);
+        }
+        @include xxs-block(){
+            border-top: 1px solid #E3E3E3;
+            padding: toVw(32) toVw(20);
+        }
+        span {
+            font-size: toVw(20);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: .3s;
+            @include xmd-block(){
+                font-size: toVw(16);
+                line-height: 100%;
+            }
+            @include xxs-block(){
+                line-height: 130%;
+            }
+        }
+        .icon {
+            height: toVw(12);
+            width: toVw(7);
+            margin-left: toVw(11);
+            fill: $black;
+            transition: .3s;
+        }
+        &:hover {
+            span {
+                color: $hover;
+            }
+            .icon {
+                fill: $hover;
+                transform: translateX(5px);
+            }
+        }
+    }
+    &-more {
+        margin-top: toVw(25);
+        margin-bottom: toVw(30);
+        display: flex;
+        justify-content: center;
+    }
+}
+    

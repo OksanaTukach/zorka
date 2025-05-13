@@ -1,0 +1,16 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Ассортимент';
+    - var breadcrumbsMod = '_white';
+
+block content
+    include ../modules/header
+    main
+        .container 
+            include ../modules/breadcrumbs
+            .banner-head(style="background-image: url('./img/content/catalog-collections/banner.png');")
+            h1.hide= title
+            .assortment
+                include ../modules/mp/mp-category
+    include ../modules/footer

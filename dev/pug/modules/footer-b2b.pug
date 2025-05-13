@@ -1,0 +1,37 @@
+footer.footer 
+  .footer-head
+    .container
+      .footer-head__wrp
+        .footer-info__wrp
+          a(href="./").footer-logo
+            img(src="img/logo-footer.png")
+        .footer-menu
+          .footer-menu__item.js-footer-menu
+            .footer-menu__zag 
+              span Клиентам
+              +icon('arr-footer')
+            .footer-menu__links
+              a.footer-menu__link(href="#") О бренде
+              a.footer-menu__link(href="#") Контакты
+              a.footer-menu__link(href="#") Новости
+              a.footer-menu__link(href="#") Каталог
+        .footer-form 
+          form.footer-form__wrp
+            .footer-form__zag Следите за нашими новостями
+            .footer-form__item.required--email.input-text-label
+              label.absl Введите ваш E-mail
+              input(type="email" placeholder="")
+              button(class="required--sbmt footer-form__sbmt") Подписаться
+              span.error Такой электронной почты не существует
+        .footer-info
+          .footer-info__item УНП 190640592
+          .footer-info__item Лицензия №02200/21-00588 выдана Министерством финансов РБ
+          .footer-info__item На основаниии решения от 30.03.2012 действительна до 16.05.2022
+  .footer-bot
+    .container
+      .footer-bot__wrp
+        .footer-bot__text 
+          span © Zorka 2021
+        .footer-bot__medialine
+          span Дизайн и разработка сайта: 
+          span.black Медиа Лайн

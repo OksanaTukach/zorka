@@ -1,0 +1,177 @@
+.catalog-filter {
+  width: 24%;
+  min-width: toVw(428);
+  margin-right: toVw(30);
+
+  @include sm-block() {
+    margin-right: toVw(15);
+    min-width: toVw(300);
+  }
+
+  @include xxs-block() {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    min-width: unset;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    overflow: auto;
+    background: white;
+
+    &._opened {
+      transform: translateX(100%);
+    }
+  }
+
+  @include xxxs-block() {
+    margin: 0 0 toVw(15) 0;
+  }
+
+  &__title {
+    font-weight: 500;
+    @include font(16);
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__body {
+    margin-top: toVw(25);
+  }
+
+  &__group {
+    padding: toVw(40) toVw(28);
+    border-bottom: 1px solid $border;
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+
+    @include sm-block() {
+      padding: toVw(25) toVw(15);
+    }
+
+    &-row {
+      &:not(:last-child) {
+        margin-bottom: toVw(15);
+      }
+    }
+
+    &-head {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &-btn {
+      display: inline-flex;
+      margin-left: toVw(10);
+      transform: rotate(180deg);
+      cursor: pointer;
+    }
+
+    &-body {
+      padding-left: toVw(25);
+      margin-top: toVw(10);
+      display: none;
+    }
+
+    &-more {
+      text-align: center;
+    }
+
+    .icon {
+      margin-left: toVw(12);
+      width: toVw(10);
+      height: toVw(6);
+      transition: all 0.3s ease-in-out;
+      fill: #7c7c7c;
+    }
+
+    .catalog-filter__title {
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease-in-out;
+      cursor: pointer;
+
+      @include hover() {
+        color: $gold;
+
+        .icon {
+          fill: $gold;
+        }
+      }
+    }
+  }
+
+  &__reset {
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    font-weight: 500;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    @include hover() {
+      color: $gold;
+    }
+  }
+
+  &__open {
+    @include from($break_xxs + 1px) {
+      display: none;
+    }
+  }
+
+  &__close {
+    padding: 0;
+    background: none;
+    border: none;
+    width: toVw(25);
+    height: toVw(25);
+    position: absolute;
+    right: toVw(10);
+    top: toVw(10);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      background: $gold;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    @include from($break_xxs + 1px) {
+      display: none;
+    }
+  }
+
+  .js-accordion {
+    &:not(._open) {
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .hidden {
+    display: none;
+
+    &.not-hidden {
+      display: block;
+    }
+  }
+}

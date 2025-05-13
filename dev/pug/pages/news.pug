@@ -1,0 +1,59 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Новости';
+	- var breadcrumbsMod = '_white';
+
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/news/banner.png');")
+			h1.hide= title
+			.news-items 
+				a(href="#").news-item 
+					.news-item__img
+						.img(style="background-image: url('./img/content/news/img1.png');")
+					.news-item__desc 
+						.zag Рождение совершентсва: как изготавливают ювелирные изделия на ZORKA
+						p Изготовление ювелирных изделий — тонкий и кропотливый процесс, в результате которого рождается совершенство из золота или серебра.
+						p Сегодня изготовлением ювелирных изделий в Минске занимается ювелирный завод ZORKA, один из лидеров ювелирной отрасли в Беларуси.
+					.news-item__btn 	
+						span Подробнее
+						+icon('arr-right')
+				a(href="#").news-item
+					.news-item__img
+						.img(style="background-image: url('./img/content/news/img2.png');")
+					.news-item__desc 
+						.zag Правила обращения с ювелирными изделиями из драгоценных металлов и уход за ними
+						p Для сохранения изделий в хорошем состоянии необходимо не только бережно обращаться с ними, но и соблюдать определенные правила эксплуатации и ухода
+						p Изделия должны экслуатироваться в условиях, исключающих их механическое повреждение, а также взаимодействие со щелочными моющими средствами, веществами, содержащими хлор и йод, кремами и мазями
+					.news-item__btn 	
+						span Подробнее
+						+icon('arr-right')
+				a(href="#").news-item 
+					.news-item__img
+						.img(style="background-image: url('./img/content/news/img3.png');")
+					.news-item__desc 
+						.zag Новая коллекция Zorka LIRA
+						p Весной 2021 года увидела свет новая ювелирная коллекция бренда ZORKA - ZORKA LIRA. 
+						p Главный элемент коллекции - остроконечный золотой ромб, щедро усыпанный сияющими фианитами с фактурными закрепками. Точь-в-точь как далекое небесное созвезздие.
+					.news-item__btn 	
+						span Подробнее
+						+icon('arr-right')
+				a(href="#").news-item 
+					.news-item__img
+						.img(style="background-image: url('./img/content/news/img4.png');")
+					.news-item__desc 
+						.zag Новая коллекция Zorka LIRA
+						p Весной 2021 года увидела свет новая ювелирная коллекция бренда ZORKA - ZORKA LIRA. 
+						p Главный элемент коллекции - остроконечный золотой ромб, щедро усыпанный сияющими фианитами с фактурными закрепками. Точь-в-точь как далекое небесное созвезздие.
+					.news-item__btn 	
+						span Подробнее
+						+icon('arr-right')
+
+			include ../modules/pagination
+
+	include ../modules/footer
+		

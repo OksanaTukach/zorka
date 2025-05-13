@@ -1,0 +1,35 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Коллекции';
+	- var breadcrumbsMod = '_white';
+
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/catalog-collections/banner.png');")
+			h1.hide= title
+			.collections-items 
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections1.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections2.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections3.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections4.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections5.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections6.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections7.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections8.png');")
+				a(href="#").collections-item
+					.img(style="background-image: url('./img/content/catalog-collections/catalog-collections9.png');")
+	include ../modules/footer
+		
+		

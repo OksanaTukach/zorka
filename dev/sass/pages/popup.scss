@@ -1,0 +1,110 @@
+.form-callback {
+  .mfp-content {
+    background-color: white;
+    max-width: 1270px;
+    padding: toVw(80) toVw(60) toVw(50) toVw(60);
+
+    @include xmd-block() {
+      padding: toVw(40) toVw(30) toVw(25) toVw(30);
+    }
+
+    @include xxs-block() {
+      padding: toVw(30) toVw(20) toVw(20) toVw(20);
+    }
+  }
+
+  button.mfp-close {
+    font-size: 0;
+    top: toVw(18);
+    right: toVw(18);
+    width: toVw(20);
+    height: toVw(20);
+
+    @include xmd-block() {
+      top: toVw(10);
+      right: toVw(10);
+    }
+
+    @include sm-block() {
+      width: toVw(15);
+      height: toVw(15);
+    }
+
+    &::before {
+      content: "";
+      background-image: url("../img/svg/close.svg");
+      background-size: contain;
+      background-position: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.mfp-bg,
+.mfp-container,
+.mfp-wrap {
+  @include xmd-block() {
+    top: 0;
+  }
+}
+
+.mfp-wrap {
+  overflow: auto;
+}
+
+.mfp-sm .mfp-content {
+  max-width: toVw(700);
+}
+
+.form-sm {
+  @include sm-block() {
+    padding: toVw(30);
+  }
+
+  &__content {
+    border: 1px solid $border;
+    padding: toVw(65);
+
+    @include sm-block() {
+      padding: toVw(30);
+    }
+  }
+
+  &__desc {
+    margin-bottom: toVw(25);
+    @include font(16);
+    line-height: 140%;
+    text-align: center;
+    color: $second-black;
+  }
+
+  &__btn {
+    border: none;
+    width: 100%;
+    padding: toVw(15);
+    background-color: $grey;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: $black;
+
+    @include hover() {
+      background-color: $hover;
+      color: #fff;
+    }
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .form-input__item {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

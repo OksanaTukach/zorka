@@ -1,0 +1,24 @@
+.banner {
+    &-head {
+        height: toVw(390);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include xmd-block(){
+            height: toVw(215);
+        }
+        @include xxs-block(){
+            height: toVw(90);
+            width: 100vw;
+            margin-left: -15px;
+        }
+    }
+    height: toVw(300);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include xxs-block(){
+        height: toVw(170);
+    }
+    
+}

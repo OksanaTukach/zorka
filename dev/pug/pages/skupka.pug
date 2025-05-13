@@ -1,0 +1,296 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Скупка золота';
+	- var breadcrumbsMod = '_white _bl';
+block libs-js
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU")
+	script(src="./js/skupka.js")
+
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/skupka/banner.png');")
+			h1.hide= title
+			.skupka.text-page.container-sm
+				.skupka-item
+					.text-page__title Как это работает?
+					p В пунктах скупки ZORKA, вы можете:
+					ul.style
+						li Сдать устаревшие или деформированные золотые изделия и получить за них деньги
+						li Обменять золотые ювелирные изделия на товары из всего ассортимента, представленного в магазине (список магазинов смотрите ниже)
+				.skupka-item
+					.text-page__title Почему выбирают нас?
+					.skupka-adv__items 
+						.skupka-adv__item
+							+icon('skupka-adv1')
+							.title Просто!
+							p Выберите ближайший к Вам магазин в котором находится пункт скупки
+						.skupka-adv__item
+							+icon('skupka-adv2')
+							.title Оперативно!
+							p Предъявите паспорт и наш специалист быстро оценит изделия и произведет расчет
+						.skupka-adv__item
+							+icon('skupka-adv3')
+							.title Выгодно!
+							p Лучшие цены за грамм золота при обмене на новое изделие
+				.skupka-item
+					.text-page__title Скупка золота
+					ol 
+						li Выберите ближайший к вам магазин, в котором находится пункт скупки ZORKA.
+						li Предъявите паспорт и оцените у специалиста пункта скупки ваше изделие.
+						li Получите деньги.
+				.skupka-item
+					.text-page__title Обмен золотых изделий
+					ol 
+						li Выберите золотые и (или) серебряные украшения из предоставленного ассортимента в магазине.
+						li Обменяйте свои изделия на товары из всего ассортимента, представленного в магазине (список магазинов см. ниже). Цена за грамм золота устанавливается такая же, как при скупке. 
+							a(href="#") (см. прейскурант ССЫЛКА)
+						li Получите дополнительную выгоду по карте клиента. Если стоимость нового изделия выше, чем сумма, предлагаемая вам за сдаваемое украшение, вы можете доплатить разницу в цене.
+				.skupka-item
+					.text-page__title Адреса пунктов скупки Zorka
+					p Работает скупка и обмен
+					.skupka-map#skupka-map
+						
+					.skupka-list 
+						.skupka-list__item.js-accordion
+							.skupka-list__item-head.js-accordion-head 
+								.left Минск
+								.right 
+									.open 
+										.text Подробнее
+										+icon('skupka-arr')
+									.close 
+										.text Свернуть
+										+icon('skupka-arr')
+							.skupka-list__item-body.js-accordion-body 
+								.row 
+									.row-item._adress
+										.title Адрес
+										a(href="#" data-to-obj='53.927035, 27.509855').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item._time 
+										.title Время работы
+										P 09:00 - 20:00 без выходных. Обед 14:00 - 14:30
+									.row-item._tel
+										.title Номер телефона
+										P  +375 29 355-65-90
+								.row 
+									.row-item._adress
+										.title Адрес
+										a(href="#" data-to-obj='53.859626, 27.674031').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item._time 
+										.title Время работы
+										P 09:00 - 20:00 без выходных. Обед 14:00 - 14:30
+									.row-item._tel
+										.title Номер телефона
+										P  +375 29 355-65-90
+								.row 
+									.row-item._adress
+										.title Адрес
+										a(href="#" data-to-obj='53.918386, 27.557789').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item._time 
+										.title Время работы
+										P 09:00 - 20:00 без выходных. Обед 14:00 - 14:30
+									.row-item._tel
+										.title Номер телефона
+										P  +375 29 355-65-90
+								.row 
+									.row-item._adress
+										.title Адрес
+										a(href="#" data-to-obj='53.920745, 27.576069').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item._time 
+										.title Время работы
+										P 09:00 - 20:00 без выходных. Обед 14:00 - 14:30
+									.row-item._tel
+										.title Номер телефона
+										P  +375 29 355-65-90
+								.row 
+									.row-item._adress
+										.title Адрес
+										a(href="#" data-to-obj='53.933553, 27.651699').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item._time 
+										.title Время работы
+										P 09:00 - 20:00 без выходных. Обед 14:00 - 14:30
+									.row-item._tel
+										.title Номер телефона
+										P  +375 29 355-65-90
+					.skupka-list 
+						.skupka-list__item.js-accordion
+							.skupka-list__item-head.js-accordion-head
+								.left Минская область
+								.right 
+									.open 
+										.text Подробнее
+										+icon('skupka-arr')
+									.close 
+										.text Свернуть
+										+icon('skupka-arr')
+							.skupka-list__item-body.js-accordion-body
+								.row 
+									.row-item 
+										.title Адрес
+										a(href="#" data-to-obj='53.908885, 27.432442').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item 
+										.title Время работы
+										P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+									.row-item 
+										.title Номер телефона
+										P  +375 29 355-65-90
+								.row 
+									.row-item 
+										.title Адрес
+										a(href="#" data-to-obj='53.900496, 27.557959').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item 
+										.title Время работы
+										P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+									.row-item 
+										.title Номер телефона
+										P  +375 29 355-65-90
+								.row 
+									.row-item 
+										.title Адрес
+										a(href="#" data-to-obj='53.863592, 27.482815').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item 
+										.title Время работы
+										P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+									.row-item 
+										.title Номер телефона
+										P  +375 29 355-65-90
+								.row 
+									.row-item 
+										.title Адрес
+										a(href="#" data-to-obj='53.916313, 27.585861').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+									.row-item 
+										.title Время работы
+										P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+									.row-item 
+										.title Номер телефона
+										P  +375 29 355-65-90
+					.skupka-list 
+						.skupka-list__item.js-accordion 
+							.skupka-list__item-head.js-accordion-head
+								.left Брестская область
+								.right 
+									.open 
+										.text Подробнее
+										+icon('skupka-arr')
+									.close 
+										.text Свернуть
+										+icon('skupka-arr')
+							.skupka-list__item-body.js-accordion-body 
+								- for(var i = 0;i<4;i++)
+									.row 
+										.row-item 
+											.title Адрес
+											a(href="#" data-to-obj='52.432002, 31.009355').js-to-map г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+										.row-item 
+											.title Время работы
+											P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+										.row-item 
+											.title Номер телефона
+											P  +375 29 355-65-90
+					.skupka-list 
+						.skupka-list__item.js-accordion 
+							.skupka-list__item-head.js-accordion-head
+								.left Витебская область
+								.right 
+									.open 
+										.text Подробнее
+										+icon('skupka-arr')
+									.close 
+										.text Свернуть
+										+icon('skupka-arr')
+							.skupka-list__item-body.js-accordion-body 
+								- for(var i = 0;i<4;i++)
+									.row 
+										.row-item 
+											.title Адрес
+											P г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+										.row-item 
+											.title Время работы
+											P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+										.row-item 
+											.title Номер телефона
+											P  +375 29 355-65-90
+					.skupka-list 
+						.skupka-list__item.js-accordion 
+							.skupka-list__item-head.js-accordion-head
+								.left Гомельская область
+								.right 
+									.open 
+										.text Подробнее
+										+icon('skupka-arr')
+									.close 
+										.text Свернуть
+										+icon('skupka-arr')
+							.skupka-list__item-body.js-accordion-body 
+								- for(var i = 0;i<4;i++)
+									.row 
+										.row-item 
+											.title Адрес
+											P г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+										.row-item 
+											.title Время работы
+											P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+										.row-item 
+											.title Номер телефона
+											P  +375 29 355-65-90
+					.skupka-list 
+						.skupka-list__item.js-accordion 
+							.skupka-list__item-head.js-accordion-head
+								.left Гродненская область
+								.right 
+									.open 
+										.text Подробнее
+										+icon('skupka-arr')
+									.close 
+										.text Свернуть
+										+icon('skupka-arr')
+							.skupka-list__item-body.js-accordion-body 
+								- for(var i = 0;i<4;i++)
+									.row 
+										.row-item 
+											.title Адрес
+											P г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+										.row-item 
+											.title Время работы
+											P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+										.row-item 
+											.title Номер телефона
+											P  +375 29 355-65-90
+					.skupka-list 
+						.skupka-list__item.js-accordion 
+							.skupka-list__item-head.js-accordion-head
+								.left Могилевская область
+								.right 
+									.open 
+										.text Подробнее
+										+icon('skupka-arr')
+									.close 
+										.text Свернуть
+										+icon('skupka-arr')
+							.skupka-list__item-body.js-accordion-body 
+								- for(var i = 0;i<4;i++)
+									.row 
+										.row-item 
+											.title Адрес
+											P г. Минск, ул. Козлова, 35, пом. 1н (только скупка золота)
+										.row-item 
+											.title Время работы
+											P 09:00 - 20 :00 без выходных. Обед 14:00 - 14:30
+										.row-item 
+											.title Номер телефона
+											P  +375 29 355-65-90
+					p.note *под обменом понимается продажа ювелирных изделий в магазине лицу, сдавшему в пункт скупки ООО «Ювелирный завод «ЗОРКА» ценности, на условиях зачета стоимости сданных ценностей в счет цены приобретаемого товара. В случае, если стоимость выбранных ювелирных изделий превышает размер стоимости сданных ценностей, осуществляется доплата разницы в цене.
+					p.note ** пункт скупки ООО «Ювелирный завод «ЗОРКА» *** по сравнению с утвержденными министерством финансов Республики Беларусь ценами на золото, принимаемое у физических лиц.
+					p.note *** режим работы пунктов скупки может отличаться от режима работы магазинов.
+					p.note **** список изделий, не подлежащих скупке у физических лиц (
+						a(href="#" target="_blank") ССЫЛКА на документ «Правила скупки»
+						|)
+								
+
+
+	include ../modules/footer
+		

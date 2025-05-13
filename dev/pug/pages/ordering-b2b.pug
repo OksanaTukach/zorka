@@ -1,0 +1,23 @@
+extends ../layout/main
+
+block variables
+  - const title = 'Оформление заказа';
+
+block libs-js
+  //- script(src="./js/basket.js")
+
+block content
+  include ../modules/header-b2b
+  main
+    .container 
+      include ../modules/breadcrumbs
+      .banner-head(style="background-image: url('./img/content/lc-b2b/banner.png');")
+      .basket
+        h1.basket-title #{title}
+        ul.basket-ordering
+          li
+            include ../modules/basket/basket-form
+          li
+            include ../modules/basket/basket-form-comment
+
+  include ../modules/footer-b2b

@@ -1,0 +1,136 @@
+.catalog-search {
+  margin: toVw(30) 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: toVw(15) toVw(30);
+  border: 1px solid $border;
+
+  @include sm-block() {
+    margin: toVw(15) 0;
+    padding: toVw(15);
+  }
+
+  &__result {
+    @include font(16);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    @include sm-block() {
+      width: 100%;
+      margin-bottom: toVw(15);
+    }
+
+    @include xxxs-block() {
+      @include font(12);
+    }
+  }
+
+  &__form {
+    position: relative;
+    width: 39.5%;
+
+    @include sm-block() {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: toVw(18) toVw(50) toVw(18) toVw(50);
+    border: 1px solid $border;
+    @include font(16);
+    line-height: 102.7%;
+    appearance: none;
+    outline-offset: unset;
+    border-radius: 0;
+
+    @include xxs-block() {
+      padding: toVw(10) toVw(50) toVw(10) toVw(50);
+      @include font(20);
+    }
+
+    @include xxxs-block() {
+      @include font(16);
+    }
+
+    @include placeholder() {
+      @include font(16);
+      line-height: 102.7%;
+      color: $second-black;
+
+      @include xxs-block() {
+        @include font(20);
+      }
+
+      @include xxxs-block() {
+        @include font(16);
+      }
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 toVw(15);
+    cursor: pointer;
+    border: none;
+
+    .icon {
+      width: toVw(20);
+      height: toVw(20);
+      fill: $gold;
+    }
+
+    @include hover() {
+      .icon {
+        fill: $hover;
+      }
+    }
+  }
+
+  &__reset {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: toVw(40);
+    height: 100%;
+    cursor: pointer;
+    border: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: toVw(25);
+      height: 2px;
+      border-radius: 1px;
+      background-color: $gold;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    @include hover() {
+      &::before,
+      &::after {
+        background-color: $hover;
+      }
+    }
+  }
+}

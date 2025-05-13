@@ -1,0 +1,66 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Коллекция Sky';
+	- var breadcrumbsMod = '_white';
+
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/catalog-collections/banner.png');")
+			h1.hide= title
+			.seo-text._lg
+				.zag Коллекция happy moments
+				p ZORKA Happy Moments –  многогранная коллекция о главном –  о счастье. Коллекция включает несколько стилизованных линеек: Happy Moments Hearts, Happy Moments Triangle, Happy Moments Infinity&Wings, Happy Moments Star. Ассортимент коллекции: браслеты, колье, кольца, серьги, подвески. Материал: золото 9K. Вставки: бриллианты, кубический цирконий, перламутр, эмаль
+			.cl-wrp
+				- for(var i = 0;i<4;i++)
+					.cl-item.mp-ct-item 
+						.img 
+							img(src="img/content/mp-sl-img1.png")
+						.name Zorka florini silver
+						.info 
+							span.bold Ref: 
+							| 0210496-CR
+						.info 
+							span.bold Металл: 
+							| серебро
+					.cl-item.mp-ct-item
+						.img 
+							img(src="img/content/mp-sl-img2.png")
+						.name Zorka florini silver
+						.info 
+							span.bold Ref: 
+							| 0210496-CR
+						.info 
+							span.bold Металл: 
+							| серебро
+					.cl-item.mp-ct-item
+						.img 
+							img(src="img/content/mp-sl-img3.png")
+						.name Zorka florini silver
+						.info 
+							span.bold Ref: 
+							| 0210496-CR
+						.info 
+							span.bold Металл: 
+							| серебро
+					.cl-item.mp-ct-item 
+						.img 
+							img(src="img/content/mp-sl-img1.png")
+						.name Zorka florini silver
+						.info 
+							span.bold Ref: 
+							| 0210496-CR
+						.info 
+							span.bold Металл: 
+							| серебро
+			.cl-more
+				a(href="#").btn Смотреть больше
+			a(href="#").cl-next
+				span Посмотреть Следующую коллекцию DE LINE
+				+icon('cl-next')
+
+	include ../modules/footer
+		

@@ -1,0 +1,89 @@
+.mp-news {
+    &__link {
+        display: flex;
+        position: relative;
+        margin-left: toVw(-15);
+        margin-right: toVw(-15);
+        @include xmd-block(){
+            margin-left: toVw(-8.5);
+            margin-right: toVw(-8.5);
+        }
+        @include xxs-block(){
+            margin-left: toVw(-2.5);
+            margin-right: toVw(-2.5);
+        }
+        &-item {
+            width: calc(50% - 0.78125vw);
+            display: flex;
+            margin: 0 toVw(15);
+            overflow: hidden;
+            height: toVw(600);
+            @include xmd-block(){
+                width: calc(50% - 0.72034vw);
+                margin: 0 toVw(8.5);
+                height: toVw(320);
+            }
+            @include sm-block(){
+                width: calc(50% - 0.85859vw);
+            }
+            @include xxs-block(){
+                width: calc(50% - 0.66667vw);
+                margin: 0 toVw(2.5);
+                height: toVw(170);
+            }
+            img {
+                transition: .6s;
+                width: 100%;
+                object-fit: cover;
+                @include xxs-block(){
+                    object-fit: cover;
+                }
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+.seo-text {
+    background: #FAFAFA;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: toVw(84) 0;
+    text-align: center;
+    @include xmd-block(){
+        padding: toVw(35) toVw(20);
+        min-height: toVw(200);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .zag {
+        font-weight: 300;
+        font-size: toVw(30);
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin-bottom: toVw(20);
+        text-align: center;
+        width: 100%;
+        @include xxs-block(){
+            font-size: toVw(25);
+        }
+    }
+    p {
+        max-width: 640px;
+        font-size: toVw(16);
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.03em;
+        margin: auto;
+    }
+    &._lg {
+        p {
+            max-width: 900px;
+        }
+    }
+}

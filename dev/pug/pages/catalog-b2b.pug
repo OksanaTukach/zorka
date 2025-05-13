@@ -1,0 +1,27 @@
+extends ../layout/main
+
+block variables
+  - const title = 'Каталог товаров';
+
+block libs-css
+  link(rel="stylesheet" type='text/css' href="./libs/nouislider.min.css")
+
+block libs-js
+  script(src="./libs/nouislider.min.js")
+  script(src="./js/catalog.js")
+
+block content
+  include ../modules/header-b2b
+  main
+    .container 
+      include ../modules/breadcrumbs
+      .banner-head(style="background-image: url('./img/content/catalog-b2b/banner.png');")
+      .catalog
+        include ../modules/catalog/catalog-filter
+        .catalog-main
+          include ../modules/catalog/catalog-sort
+          button.btn.catalog-filter__open.js-filter Фильтр
+          include ../modules/catalog/catalog-list
+          include ../modules/pagination
+
+  include ../modules/footer-b2b

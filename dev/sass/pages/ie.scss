@@ -1,0 +1,66 @@
+.page-ie {
+    height: 100vh;
+    background-image: url(../img/content/ie/bg.png);
+    background-color: #323232;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+        content: '';
+        height: 100%;
+        width: 825px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        top: 0;
+        background-image: url('../img/content/ie/line.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &__wrp {
+        z-index: 15;
+        position: relative;
+        width: fit-content;
+        max-width: 830px;
+    }
+    &__zag {
+        margin-bottom: 70px;
+        display: flex;
+        justify-content: center;
+    }
+    &__copy {
+        z-index: 15;
+        color: #F3F3F3;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 16px;
+        line-height: 160%;
+        font-weight: 400;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__text {
+        &-name {
+            font-size: 25px;
+            line-height: 120%;
+            color: #FFFFFF;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        &-desc {
+            font-size: 16px;
+            line-height: 160%;
+            text-align: center;
+            color: #F3F3F3;
+        }
+    }
+}

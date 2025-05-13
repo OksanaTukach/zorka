@@ -1,0 +1,26 @@
+.gray-block.catalog-sort(data-mobile-acc)
+  .catalog-sort__title(data-mobile-acc-btn).js-mobile-acc Сортировка товаров
+    .mobile-acc-btn
+      +icon('arr-footer')
+  .catalog-sort__item-list(data-mobile-acc-dd)
+    .catalog-sort__item
+      .catalog-sort__item-container
+        .catalog-sort__title Сортировка
+        .catalog-sort__select
+          .select
+            select(name="")
+              option(value="" selected) Популярные
+              option(value="") Процент скидки
+              option(value="") Новинки
+              option(value="") Алфавит
+              option(value="") Увеличение цены
+              option(value="") Уменьшение цены
+    .catalog-sort__item
+      .catalog-sort__item-container
+        .catalog-sort__title Показать по
+        .catalog-sort__select
+          .select
+            select(name="")
+              option(value="" selected) 20
+              option(value="") 40
+              option(value="") 100

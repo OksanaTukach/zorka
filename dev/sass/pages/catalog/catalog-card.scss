@@ -1,0 +1,50 @@
+.catalog-card {
+  position: relative;
+  padding: toVw(20) toVw(60) toVw(36);
+  border: 1px solid $border;
+  margin: 0 -1px -1px 0;
+
+  @include xmd-block() {
+    padding: toVw(30);
+  }
+
+  &__img {
+    position: relative;
+    width: 70%;
+    padding-top: 70%;
+    margin: 0 auto toVw(11);
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin-bottom: toVw(11);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__info {
+    margin-bottom: toVw(30);
+    text-align: center;
+
+    span {
+      margin-left: toVw(5);
+      color: $second-black;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    min-width: unset;
+  }
+
+  @include hover() {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}

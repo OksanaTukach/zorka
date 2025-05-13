@@ -1,0 +1,560 @@
+.card {
+  .slick-arrow {
+    width: toVw(30);
+    height: toVw(30);
+  }
+
+  .slick-next {
+    @include xmd-block() {
+      right: 0;
+    }
+  }
+
+  .slick-prev {
+    @include xmd-block() {
+      left: 0;
+    }
+  }
+
+  &-main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 toVw(25) 7.5%;
+    border-top: 1px solid $border;
+    border-left: 1px solid $border;
+    border-bottom: 1px solid $border;
+
+    @include sm-block() {
+      margin: 0 0 toVw(15) 0;
+    }
+
+    @include xxs-block() {
+      border: none;
+    }
+  }
+
+  &-slider {
+    position: relative;
+    width: 35%;
+
+    @include md-block() {
+      display: flex;
+      align-items: center;
+    }
+
+    @include sm-block() {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+
+    @include xxs-block() {
+      width: 100%;
+      margin-bottom: toVw(15);
+    }
+
+    &__main {
+      width: 100%;
+
+      @include sm-block() {
+        margin: 0 0 toVw(15);
+      }
+
+      @include xxs-block() {
+        border: 1px solid $border;
+      }
+
+      &-slide {
+        position: relative;
+        display: block !important;
+        width: 100%;
+        padding-top: 61%;
+
+        img {
+          @include absolute-center();
+          display: block;
+          width: 50%;
+        }
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      width: 17%;
+      right: 100%;
+      transform: translateX(toVw(-11));
+
+      @include sm-block() {
+        position: relative;
+        width: 100%;
+        right: unset;
+        transform: unset;
+      }
+
+      &-slide {
+        position: relative;
+        display: block !important;
+        width: 100%;
+        padding-top: 114%;
+        border: 1px solid $border;
+        cursor: pointer;
+        transition: border-color 0.3s ease-in-out;
+
+        @include hover() {
+          border-color: $gold;
+        }
+
+        img {
+          @include absolute-center();
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .slick {
+        &-list {
+          margin: toVw(-6) 0;
+
+          @include xxs-block() {
+            margin: 0 toVw(-7.5);
+          }
+        }
+
+        &-slide {
+          & > div {
+            padding: toVw(5) 0;
+
+            @include sm-block() {
+              padding: 0 toVw(7.55);
+            }
+          }
+        }
+
+        &-current {
+          .card-slider__nav-slide {
+            border-color: $gold;
+          }
+        }
+
+        &-arrow {
+          left: 50%;
+          transform: translateX(-50%) rotate(-90deg);
+
+          @include xmd-block() {
+            left: 50%;
+          }
+
+          @include sm-block() {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &-prev {
+          top: auto;
+          bottom: 0;
+
+          @include sm-block() {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &-next {
+          top: 0;
+          bottom: auto;
+
+          @include sm-block() {
+            right: 0;
+            top: 50%;
+            left: auto;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+
+    &__btn {
+      position: relative;
+      padding: toVw(10) toVw(23) toVw(10) toVw(50);
+      margin-bottom: toVw(15);
+      border: 1px solid $border;
+      @include font(16);
+      line-height: 100%;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      background: #fff;
+      text-align: left;
+      color: $black;
+
+      @include from($break_xxs + 1px) {
+        position: absolute;
+        left: toVw(15);
+        top: toVw(15);
+      }
+
+      @include xxs-block() {
+        width: 100%;
+      }
+
+      .icon {
+        position: absolute;
+        left: toVw(23);
+        width: toVw(20);
+        height: toVw(20);
+        top: 50%;
+        transform: translateY(-50%);
+        fill: $gold;
+      }
+
+      @include hover() {
+        color: $gold;
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: stretch;
+    width: 65%;
+    border-left: 1px solid $border;
+
+    @include xxs-block() {
+      border-top: 1px solid $border;
+      width: 100%;
+    }
+
+    .link-underline {
+      @include xxs-block() {
+        margin-bottom: toVw(15);
+      }
+    }
+  }
+
+  &-block {
+    flex-grow: 1;
+    padding: toVw(15) toVw(45);
+    border-right: 1px solid $border;
+
+    @include md-block() {
+      padding: toVw(25);
+    }
+
+    @include sm-block() {
+      padding: toVw(15);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border;
+    }
+
+    &__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      @include xxs-block() {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+
+      .link-icon {
+        @include xxs-block() {
+          margin-bottom: 15px;
+          order: 1;
+        }
+
+        .icon {
+          stroke-width: 2px;
+        }
+      }
+
+      .link-underline {
+        @include xxs-block() {
+          order: 2;
+        }
+      }
+    }
+
+    &--w50 {
+      width: 50%;
+
+      @include md-block() {
+        width: 100%;
+      }
+    }
+  }
+
+  &-title {
+    margin-bottom: toVw(12);
+    font-weight: 500;
+    @include font(25);
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    @include md-block() {
+      @include font(20);
+    }
+
+    @include sm-block() {
+      @include font(18);
+    }
+  }
+
+  &-article {
+    margin-bottom: toVw(26);
+    @include font(16);
+    line-height: 100%;
+    letter-spacing: 0.03em;
+  }
+
+  &-status {
+    display: inline-flex;
+    white-space: nowrap;
+
+    img {
+      width: toVw(15);
+      vertical-align: baseline;
+    }
+
+    span {
+      vertical-align: baseline;
+      font-weight: 500;
+      @include font(16);
+      line-height: 100%;
+      margin-left: toVw(7);
+    }
+  }
+
+  &-desc {
+    display: table;
+
+    &__row {
+      display: table-row;
+
+      .card-desc__name,
+      .card-desc__info {
+        display: table-cell;
+
+        @include xxxs-block() {
+          display: block;
+        }
+      }
+
+      &:not(:last-child) {
+        .card-desc__name,
+        .card-desc__info {
+          padding-bottom: toVw(12);
+        }
+      }
+
+      &:last-child {
+        @include xxxs-block() {
+          .card-desc__name,
+          .card-desc__info {
+            padding-bottom: toVw(12);
+          }
+        }
+      }
+    }
+
+    &__name,
+    &__info {
+      @include font(16);
+      font-weight: 500;
+      line-height: 100%;
+    }
+
+    &__name {
+      color: $second-black;
+    }
+
+    &__info {
+      display: inline;
+      padding-left: toVw(25);
+      color: $black;
+
+      @include sm-block() {
+        padding-left: toVw(10);
+      }
+
+      @include xxxs-block() {
+        display: block;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &-sizes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: toVw(15);
+
+    @include xs-block() {
+      flex-wrap: wrap;
+    }
+
+    @include xxs-block() {
+      border-bottom: 1px solid $border;
+    }
+
+    &__list {
+      display: flex;
+      width: calc(100% - 215px);
+      margin-right: toVw(15);
+      max-width: 100%;
+      overflow-x: auto;
+      padding-bottom: toVw(15);
+
+      @include xs-block() {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 -15px 15px 0;
+        padding-bottom: 0;
+      }
+
+      li {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+          margin-right: toVw(15);
+
+          @include xs-block() {
+            margin-right: 15px;
+            margin-bottom: 15px;
+          }
+        }
+
+        &:last-child {
+          @include xxs-block() {
+            margin-right: 15px;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: toVw(8);
+
+      @include xxs-block() {
+        @include font(14);
+      }
+
+      b {
+        margin-left: toVw(5);
+      }
+    }
+
+    &__btn {
+      width: 200px;
+
+      @include xxs-block() {
+        width: 100%;
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: auto;
+      min-width: unset;
+      width: 100%;
+
+      @include xxs-block() {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-banner {
+    padding: toVw(15);
+    background: $grey;
+    text-align: center;
+    letter-spacing: 0.03em;
+    border: 1px solid $border;
+
+    @include md-block() {
+      padding: toVw(25);
+    }
+
+    @include sm-block() {
+      padding: toVw(15);
+    }
+
+    &__title {
+      font-weight: 300;
+      @include font(26);
+      line-height: 100%;
+      text-transform: uppercase;
+      margin-bottom: toVw(15);
+
+      @include sm-block() {
+        @include font(24);
+      }
+    }
+
+    &__desc {
+      @include font(16);
+      line-height: 140%;
+      color: $second-black;
+    }
+  }
+
+  &-products {
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+    border-bottom: 1px solid $border;
+    margin-top: -1px;
+
+    &:not(:last-of-type) {
+      margin-bottom: toVw(25);
+
+      @include sm-block() {
+        margin-bottom: toVw(15);
+      }
+    }
+
+    .slick {
+      &-list {
+        display: flex;
+        margin-left: -1px;
+      }
+
+      &-track {
+        display: flex;
+      }
+
+      &-slide {
+        height: 100%;
+
+        & > div {
+          height: 100%;
+        }
+
+        li {
+          height: 100%;
+        }
+
+        .catalog-card {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .btn {
+          margin-top: auto;
+        }
+      }
+    }
+  }
+}

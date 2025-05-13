@@ -1,0 +1,9 @@
+.assortment {
+    .mp-category {
+        margin-top: toVw(20);
+        border-top: 1px solid $border;
+        @include xmd-block(){
+            margin-top: toVw(15);
+        }
+    }
+}

@@ -1,0 +1,103 @@
+extends ../layout/main
+
+block variables
+  - const title = 'Карточка товара';
+
+block libs-css
+  link(href="./libs/slick-theme.css" rel="stylesheet")
+  link(href="./libs/slick.css" rel="stylesheet")
+
+block libs-js
+  script(src="./libs/slick.js")
+  script(src="./js/card.js")
+
+block content
+  include ../modules/header-b2b
+  main
+    .container 
+      include ../modules/breadcrumbs
+      .card
+        .card-main
+          .card-slider.js-double-slider
+            .card-slider__nav
+              -for(let i = 0; i < 5; i++)
+                .card-slider__nav-slide
+                  img(src="./img/content/catalog-b2b/catalog-card.png" alt="")
+            .card-slider__main
+              -for(let i = 0; i < 5; i++)
+                .card-slider__main-slide
+                  img(src="./img/content/catalog-b2b/catalog-card.png" alt="")
+            button.card-slider__btn.js-video-popup(data-href="https://www.youtube.com/watch?v=n673WFNVcKM") Видео о товаре
+              +icon('video')
+          .card-info
+            .card-block
+              .card-block__head
+                a.link.link-underline.link-uppercase Happy moments
+                a.link.link-icon
+                  +icon('arr-sl-l')
+                  span Вернуться в каталог
+              h1.card-title Кольцо из серебра с бриллиантом и фианитом 0210192
+              .card-article Артикул: 12424-200
+              .card-status
+                .card-status
+                  img(src="./img/svg/in-stock.svg" alt="")
+                  span В наличии
+                //- .card-status
+                  img(src="./img/svg/in-progress.svg" alt="")
+                  span В производстве
+            .card-block.card-block--w50
+              ul.card-desc
+                li.card-desc__row
+                  .card-desc__name Металл:
+                  .card-desc__info Золото
+                li.card-desc__row
+                  .card-desc__name Проба:
+                  .card-desc__info 375
+                li.card-desc__row
+                  .card-desc__name Цвет:
+                  .card-desc__info Комбинированное серебро
+                li.card-desc__row
+                  .card-desc__name Вес:
+                  .card-desc__info 5 гр.
+            .card-block.card-block--w50
+              ul.card-desc
+                -for(let i = 0; i < 4; i++)
+                  li.card-desc__row
+                    .card-desc__name Доп. параметра:
+                    .card-desc__info Доп. описание
+            .card-block
+              span.card-desc__name Вставка:
+              span.card-desc__info Кубический цирконий + фианит + лунный камень + сапфир + топаз и еще несколько вставок
+            .card-block.card-sizes
+              ul.card-sizes__list.scroll-bar
+                -for(let i = 15; i <= 22; i += 0.5)
+                  li
+                    .card-sizes__title
+                      //- span Размер:
+                      b #{i}
+                    .input-number
+                      button(type="button" onclick="this.nextElementSibling.stepDown()") –
+                      input(type="number" name="" min="0" max="20" value="0")
+                      button(type="button" onclick="this.previousElementSibling.stepUp()") +
+              .card-sizes__btn
+                button.btn._has-btn-popup.js-show-btn-popup В корзину
+                  .btn-popup Товар добавлен в корзину
+        .card-banner
+          span.card-banner__title Изделия в гарнитуре
+          p.card-banner__desc Текст, который описывает содержания блока ниже. Текст влазит только в две строчки и несет полезную информацию для пользователя
+
+        ul.card-products.js-single-slider
+          -for(let i = 0; i < 3; i++)
+            li
+              include ../modules/catalog/catalog-card
+
+        .card-banner
+          span.card-banner__title Вам может понравиться
+          p.card-banner__desc Текст, который описывает содержания блока ниже. Текст влазит только в две строчки и несет полезную информацию для пользователя
+
+        ul.card-products.js-single-slider
+          -for(let i = 0; i < 6; i++)
+            li
+              include ../modules/catalog/catalog-card
+
+  include ../modules/footer-b2b

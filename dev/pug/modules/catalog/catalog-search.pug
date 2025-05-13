@@ -1,0 +1,8 @@
+.catalog-search
+  .catalog-search__result
+    p По вашему запросу <b>«Кольцо»</b> найдено <b>725 результатов</b>
+  form(action="").catalog-search__form
+    input(type="search" name="" placeholder="Введите поисковый запрос").catalog-search__input
+    button(type="submit").catalog-search__submit
+      +icon('header-search')
+    button(type="button").catalog-search__reset.js-clear-search

@@ -1,0 +1,19 @@
+extends ../layout/main
+
+block variables
+  - const title = 'Персональные данные';
+  -
+    const docList = ['Свидетельство о регистрации', 'Лицензия', 'Прейскурант'];
+
+block content
+  include ../modules/header-b2b
+  main
+    .container 
+      include ../modules/breadcrumbs
+      .banner-head(style="background-image: url('./img/content/lc-b2b/banner.png');")
+      .lc
+        include ../modules/lc/lc-menu
+        .lc-content
+          include ../modules/lc/lc-profile
+
+  include ../modules/footer-b2b

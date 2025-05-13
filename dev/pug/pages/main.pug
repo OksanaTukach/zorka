@@ -1,0 +1,26 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная';
+	- var breadcrumbsMod = '';
+block libs-css
+	//Дополнительно
+	//link(rel="stylesheet" type='text/css' href="./css/main.css")
+	link(rel="stylesheet" type='text/css' href="./libs/slick-theme.css")
+	link(rel="stylesheet" type='text/css' href="./libs/slick.css")
+block libs-js
+	//Дополнительно
+	script(src="./libs/slick.js")
+
+	script(src="./js/slider.js")
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/mp/mp-ms-sl
+			include ../modules/mp/mp-category
+			include ../modules/mp/mp-ct
+			include ../modules/mp/mp-news
+
+	include ../modules/footer
+		

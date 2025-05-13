@@ -1,0 +1,13 @@
+.lc-table {
+
+  td,
+  th {
+    &:last-child {
+      width: 100%;
+    }
+  }
+
+  td {
+    border-bottom: 1px solid $border;
+  }
+}

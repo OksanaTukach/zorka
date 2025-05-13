@@ -1,0 +1,24 @@
+extends ../layout/main
+
+block variables
+  - const title = 'Мой заказ';
+
+block libs-js
+  script(src="./js/basket.js")
+
+block content
+  include ../modules/header-b2b
+  main
+    .container 
+      include ../modules/breadcrumbs
+      .banner-head(style="background-image: url('./img/content/lc-b2b/banner.png');")
+      .basket
+        h1.basket-title #{title}
+        include ../modules/basket/basket-table
+        ul.basket-result
+          li
+            include ../modules/basket/basket-order
+          li
+            include ../modules/basket/basket-order-comment
+
+  include ../modules/footer-b2b

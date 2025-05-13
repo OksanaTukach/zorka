@@ -1,0 +1,116 @@
+.text-page {
+    margin-top: toVw(60);
+    @include xmd-block(){
+        margin-top: toVw(45);
+    }
+    @include xxs-block(){
+        margin-top: toVw(40);
+    }
+    &__title {
+        font-weight: 300;
+        font-size: toVw(25);
+        line-height: 140%;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin-bottom: toVw(25);
+        @include xmd-block(){
+            font-size: toVw(20);
+        }
+        @include xxs-block(){
+            font-size: toVw(15);
+        }
+        h1 {
+            font-weight: 300;
+            font-size: toVw(25);
+            line-height: 140%;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            @include xmd-block(){
+                font-size: toVw(20);
+            }
+            @include xxs-block(){
+                font-size: toVw(15);
+            }
+        }
+    }
+    
+    p {
+        font-size: toVw(16);
+        line-height: 140%;
+        letter-spacing: 0.03em;
+        margin-bottom: toVw(30);
+        @include xmd-block(){
+            margin-bottom: toVw(25);
+        }
+    }
+    .img {
+        margin-bottom: toVw(45);
+        margin-top: toVw(25);
+        display: flex;
+        text-align: center;
+        width: 100%;
+        @include xmd-block(){
+            
+            margin-bottom: toVw(35);
+            margin-top: toVw(15);
+        }
+        img {
+            max-width: 80%;
+            margin: auto;
+            @include xmd-block(){
+                max-width: 100%;
+            }
+        }
+        &.dbl {
+            justify-content: space-between;
+            @include xxs-block(){
+                flex-wrap: wrap;
+            }
+            img {
+                width: calc((100% - 20px) / 2);
+                @include xxs-block(){
+                    width: 100%;
+                    margin-bottom: toVw(15);
+                    
+                }
+            }
+        }
+    }
+    &__head {
+        img {
+            padding-top: 0;
+        }
+    }
+
+    ul.style {
+        li {
+            padding-left: toVw(17);
+            position: relative;
+            margin-bottom: toVw(10);
+            &::before {
+                content: '';
+                position: absolute;
+                width: toVw(6);
+                height: toVw(6);
+                background-color: $gold;
+                border-radius: 50%;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+            }
+        }
+    }
+    ol {
+        padding-left: toVw(18);
+        li {
+            margin-bottom: toVw(10);
+        }
+    }
+    a {
+        color: $gold;
+        transition: .3s;
+        &:hover {
+            color: $hover;
+        }
+    }
+}

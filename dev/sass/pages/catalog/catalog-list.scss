@@ -1,0 +1,35 @@
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: toVw(50);
+
+  @include sm-block() {
+    margin-top: toVw(25);
+  }
+
+  @include xxs-block() {
+    margin-top: toVw(15);
+  }
+
+  li {
+    width: 25%;
+
+    @include xmd-block() {
+      width: 33.33%;
+    }
+
+    @include xs-block() {
+      width: 50%;
+    }
+  }
+
+  .catalog-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+      margin-top: auto;
+    }
+  }
+}

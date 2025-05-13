@@ -1,0 +1,64 @@
+.lc-order {
+  &__head {
+    display: flex;
+    margin-bottom: toVw(20);
+    border-bottom: 1px solid $border;
+    max-width: 100%;
+    overflow: auto;
+
+    .btn-tab {
+      &:not(:last-child) {
+        margin-right: toVw(60);
+
+        @include sm-block() {
+          margin-right: toVw(30);
+        }
+
+        @include xxs-block() {
+          margin-right: toVw(15);
+        }
+      }
+    }
+  }
+}
+
+.btn-tab {
+  padding: 0 0 toVw(16);
+  font-weight: 500;
+  @include font(20);
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  color: $black;
+
+  @include sm-block() {
+    @include font(16);
+  }
+
+  @include xs-block() {
+    @include font(14);
+  }
+
+  @include hover() {
+    color: $hover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: $gold;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &._active {
+    &::after {
+      width: 100%;
+    }
+  }
+}

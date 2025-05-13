@@ -1,0 +1,106 @@
+@import "./basket-table.scss";
+@import "./basket-comment.scss";
+@import "./basket-order.scss";
+
+.basket {
+  margin-top: toVw(55);
+
+  @include md-block() {
+    margin-top: toVw(35);
+  }
+
+  @include sm-block() {
+    margin-top: toVw(15);
+  }
+
+  &-title {
+    margin-bottom: toVw(35);
+    font-weight: 500;
+    @include font(30);
+    line-height: 100%;
+    letter-spacing: 0.03em;
+
+    @include sm-block() {
+      margin-bottom: toVw(15);
+      @include font(26);
+    }
+  }
+
+  &-head {
+    padding: toVw(35);
+    @include font(16);
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    background: $grey;
+    border-bottom: 1px solid $border;
+
+    @include sm-block() {
+      padding: toVw(15);
+    }
+  }
+
+  &-result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &>li {
+      &:nth-child(1) {
+        width: 62%;
+
+        @include xxs-block() {
+          width: 100%;
+          margin-bottom: toVw(15);
+        }
+      }
+
+      &:nth-child(2) {
+        width: 37%;
+
+        @include xxs-block() {
+          width: 100%;
+          margin-bottom: toVw(15);
+        }
+      }
+    }
+  }
+
+  &-ordering {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &>li {
+      &:nth-child(1) {
+        width: 72%;
+
+        @include sm-block() {
+          width: 49%;
+        }
+
+        @include xxs-block() {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 24%;
+
+        @include sm-block() {
+          width: 49%;
+        }
+
+        @include xxs-block() {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .textarea .absl {
+    @include font(16);
+    color: $second-black;
+  }
+}

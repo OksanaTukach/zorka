@@ -1,0 +1,117 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Контакты';
+		- var breadcrumbsMod = '_white';
+block libs-js
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU")
+	script(src="./js/contact.js")
+
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/contact/banner.png');")
+			h1.hide= title
+			.seo-text
+				.zag Контакты ООО «Ювелирный завод «Зорка»
+				p Сегодня изготовлением ювелирных изделий в Минске занимается ювелирный завод ZORKA, который по праву считается одним из лидеров ювелирной отрасли в Беларуси
+			.contact-info._map 
+				.contact-info__wrp 
+					.title По общим вопросам
+					.contact-info__item 
+						.name Юридический и почтовый адрес
+						p 223016, Минская область, Минский р-н, новодворский с/с, 71/1, район промзона Шабаны
+					.contact-info__item 
+						.name Дополнительный почтовый адрес
+						p 220075, г. Минск, а/я 163
+					.contact-info__item 
+						.name Телефон
+						p 
+							a(href="tel:+375173444420") +375 (17) 344-44-20
+					.contact-info__item 
+						.name Факс
+						p +375 (17) 346-24-59
+					.contact-info__item 
+						.name Email
+						p 
+							a(href="mailto:Info@zorkagold.by") Info@zorkagold.by
+					a.ajax-form(href="popup-callback.html" data-class='form-callback').btn Написать нам
+				.contact-info__wrp 
+					.title Для оптовых покупателей
+					.contact-info__item 
+						.name Телефон
+						p 
+							a(href="tel:+375173444420") +375 (17) 344-44-20 (доб. 131)
+						p 
+							a(href="tel:+375296704749") +375 (29) 670-47-49
+					.contact-info__item 
+						.name Email
+						p 
+							a(href="mailto:Sales@zorkagold.by") Sales@zorkagold.by
+				.contact-map#contact-map
+			.seo-text
+				.zag Контакты наших отделов
+				p Сегодня изготовлением ювелирных изделий в Минске занимается ювелирный завод ZORKA, который по праву считается одним из лидеров ювелирной отрасли в Беларуси
+			.contact-info
+				.contact-info__wrp 
+					.title Рекламный отдел
+					.contact-info__item 
+						.name Юридический и почтовый адрес
+						p 223016, Минская область, Минский р-н, новодворский с/с, 71/1, район промзона Шабаны
+					.contact-info__item 
+						.name Дополнительный почтовый адрес
+						p 220075, г. Минск, а/я 163
+					.contact-info__item 
+						.name Телефон
+						p 
+							a(href="tel:+375173444420") +375 (17) 344-44-20
+					.contact-info__item 
+						.name Факс
+						p +375 (17) 346-24-59
+					.contact-info__item 
+						.name Email
+						p 
+							a(href="mailto:Info@zorkagold.by") Info@zorkagold.by
+				.contact-info__wrp 
+					.title HR отдел
+					.contact-info__item 
+						.name Юридический и почтовый адрес
+						p 223016, Минская область, Минский р-н, новодворский с/с, 71/1, район промзона Шабаны
+					.contact-info__item 
+						.name Дополнительный почтовый адрес
+						p 220075, г. Минск, а/я 163
+					.contact-info__item 
+						.name Телефон
+						p 
+							a(href="tel:+375173444420") +375 (17) 344-44-20
+					.contact-info__item 
+						.name Факс
+						p +375 (17) 346-24-59
+					.contact-info__item 
+						.name Email
+						p 
+							a(href="mailto:Info@zorkagold.by") Info@zorkagold.by
+				.contact-info__wrp 
+					.title Приемная
+					.contact-info__item 
+						.name Юридический и почтовый адрес
+						p 223016, Минская область, Минский р-н, новодворский с/с, 71/1, район промзона Шабаны
+					.contact-info__item 
+						.name Дополнительный почтовый адрес
+						p 220075, г. Минск, а/я 163
+					.contact-info__item 
+						.name Телефон
+						p 
+							a(href="tel:+375173444420") +375 (17) 344-44-20
+					.contact-info__item 
+						.name Факс
+						p +375 (17) 346-24-59
+					.contact-info__item 
+						.name Email
+						p 
+							a(href="mailto:Info@zorkagold.by") Info@zorkagold.by
+
+	include ../modules/footer
+		

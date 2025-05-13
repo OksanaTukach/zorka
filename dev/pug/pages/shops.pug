@@ -1,0 +1,51 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Где купить';
+	- var breadcrumbsMod = '_white';
+block libs-js
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU")
+	script(src="./js/shops.js")
+
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/shops/banner.png');")
+			h1.hide= title
+			.seo-text
+				.zag Где приобрести наши изделия?
+				p Золотые и серебряные ювелирные изделия производства ООО «Ювелирный завод ЗОРКА» можно приобрести в Республике Беларусь в салонах
+			.shops-items 
+				a.shops-item(href="#") 
+					img(src="img/content/shops/shops1.png", alt="")
+				a.shops-item(href="#") 
+					img(src="img/content/shops/shops2.png", alt="")
+				a.shops-item(href="#") 
+					img(src="img/content/shops/shops3.png", alt="")
+			.shops-list-map 
+				.shops-list
+					.shops-list__items 
+						.shops-list__item.js-accordion._open
+							.shops-list__item-head.js-accordion-head 
+								div Список магазинов Минска 
+									+icon('skupka-arr')
+							.shops-list__item-body.js-accordion-body 
+								.row г. Минск. ТРЦ «Palazzo» Ювелирные украшения «Мономах», ул. Тимирязева, 74А.
+								.row г. Минск. ТРЦ «МОМО» Ювелирные украшения «Мономах», пр. Партизанский, 150А.
+								.row г. Минск. «Ювелирный центр» Ювелирные украшения «Мономах», ул. Кропоткина, 72
+								.row г. Минск. Ювелирные украшения «Мономах», ул. Куйбышева, 69
+								.row г. Минск. ТРЦ «DanaMall» Ювелирные украшения «Мономах», ул. Петра Мстиславца, 11
+								.row г. Минск. ТРЦ «Титан» Ювелирные украшения «Мономах», пр. Дзержинского, 104
+								.row г. Минск. ТРЦ «GreenCity» Ювелирные украшения «Мономах», ул. Притыцкого, 156
+								.row г. Минск. «ЦУМ Минск». Адрес: пр. Независимости, 54
+								.row г. Минск. «ГУМ». Адрес: пр. Независимости, 21
+								.row г. Минск, Торговый дом «На Немиге». Адрес: ул. Немига, 8
+								.row г. Минск, Универмаг «Беларусь». Адрес: ул. Жилуновича, 4
+								.row г. Минск, «Кирмаш». Адрес: пр. Дзержинского,100; ул. Веры Хоружей, 21
+					.shops-list__note
+						p Так же ювелирные изделия бренда ZORKA представлены в ассортименте ювелирных салонов в странах ближнего и дальнего зарубежья: Россия, Казахстан, Польша, Молдавия, Латвия, Литва, Эстония, Германия, США
+				.shops-map#shops-map
+	include ../modules/footer
+		

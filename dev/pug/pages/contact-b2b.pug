@@ -1,0 +1,80 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Контакты';
+block libs-js
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU")
+	script(src="./js/contact.js")
+
+block content
+	include ../modules/header-b2b
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/contact/banner.png');")
+			h1.hide= title
+			.seo-text
+				.zag Контакты ООО «Ювелирный завод «Зорка»
+				p Сегодня изготовлением ювелирных изделий в Минске занимается ювелирный завод ZORKA, который по праву считается одним из лидеров ювелирной отрасли в Беларуси
+			.contact-info._map 
+				.contact-info__wrp 
+					.title По общим вопросам
+					.contact-info__item 
+						.name Юридический и почтовый адрес
+						p 223016, Минская область, Минский р-н, новодворский с/с, 71/1, район промзона Шабаны
+					.contact-info__item 
+						.name Дополнительный почтовый адрес
+						p 220075, г. Минск, а/я 163
+					.contact-info__item 
+						.name Телефон
+						p 
+							a(href="tel:+375173444420") +375 (17) 344-44-20
+					.contact-info__item 
+						.name Факс
+						p +375 (17) 346-24-59
+					.contact-info__item 
+						.name Email
+						p 
+							a(href="mailto:Info@zorkagold.by") Info@zorkagold.by
+					a.ajax-form(href="popup-callback.html" data-class='form-callback').btn Написать нам
+				.contact-info__wrp 
+					.title Для оптовых покупателей
+					.contact-info__item 
+						.name Директор по развитию
+						.person Иванов Иван Иванович
+						p 
+							a(href="tel:+375296704749") +375 (29) 670-47-49
+						p 
+							a(href="tel:+375172961849") +375 (17) 296-18-49
+						p 
+							a(href="mailto:director@gmail.com") director@gmail.com
+					.contact-info__item 
+						.name Руководитель отдела
+						.person Иванов Иван Иванович
+						p 
+							a(href="tel:+375296704749") +375 (29) 670-47-49
+						p 
+							a(href="tel:+375172961849") +375 (17) 296-18-49
+						p 
+							a(href="mailto:rucovoditel@gmail.com") rucovoditel@gmail.com
+					.contact-info__item 
+						.name Специалист по экспорту
+						.person Иванов Иван Иванович
+						p 
+							a(href="tel:+375296704749") +375 (29) 670-47-49
+						p 
+							a(href="tel:+375172961849") +375 (17) 296-18-49
+						p 
+							a(href="mailto:export@gmail.com") export@gmail.com
+					.contact-info__item 
+						.name Специалист по продажам в РБ
+						.person Иванов Иван Иванович
+						p 
+							a(href="tel:+375296704749") +375 (29) 670-47-49
+						p 
+							a(href="tel:+375172961849") +375 (17) 296-18-49
+						p 
+							a(href="mailto:prodagi@gmail.com") prodagi@gmail.com
+				.contact-map#contact-map
+
+	include ../modules/footer-b2b

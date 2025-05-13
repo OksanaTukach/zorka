@@ -1,0 +1,63 @@
+include ../mixins
+
+.form.form-sm
+  .title Регистрация
+  form(action="") 
+    .form-input__item.required--input.input-text-label
+      label.absl Наименование юр. лица
+        span *
+      input(type="text")
+    .form-input__item.required--input.input-text-label.letter--inset
+      label.absl Страна
+        span *
+      input(type="text")
+    .form-input__item.required--input.input-text-label.letter--inset
+      label.absl Город
+        span *
+      input(type="text")
+    .form-input__item.num--inset.required--input.input-text-label
+      label.absl УНП, ИНН
+        span *
+      input(type="text")
+    .form-input__item.required--input.letter--inset.input-text-label
+      label.absl ФИО Контактного лица
+        span *
+      input(type="text")
+    .form-input__item.required--input.input--mask--required.js-phone
+      .input-country
+        label Телефон
+          span *
+        select.styler.js-value.no-style
+          option(data-mask='(99) 999-99-99' data-value='(99) 999-99-99' data-placeholder='(__) ___-__-__' data-img="") +375
+          option(data-mask='(999) 999-99-99' data-value='(999) 999-99-99' data-placeholder='(___) ___-__-__ ' data-img="" ) +7
+          option.no-mask Другая
+        input(type='tel' data-mask='(99) 999-99-99' data-placeholder='(__) ___-__-__' placeholder='(__) ___-__-__').input--main.js-value
+        input(type='tel').input--hidden
+    .form-input__item.required--email.input-text-label
+      label.absl Email
+        span *
+      input(type="email" )
+    .form-input__item.required--url.input-text-label
+      label.absl Сайт
+      input(type="text")
+    .form-input__item.textarea
+      label Коментарии
+      textarea(rows="4")
+    .form-input__item
+      img(src="./img/content/recaptcha.png" alt="")
+    .form-input__item.required--check
+      label.checkbox
+        input(type="checkbox" name="")
+        span.checkbox-tick
+        span.checkbox-text Мы используем файлы cookie.
+          br
+          | Для реализации основных услуг и функций сайта, повышения удобства и эффективности работы посетителей сайта мы используем файлы cookie и иные инструменты.
+          br
+          | Продолжая использовать сайт www.b2b.zorka-gold.by и нажимая кнопку «Зарегистрироваться», я подтверждаю, что ознакомлен(-а) с 
+          a(href="#").link Политикой, 
+          a(href="#").link Информацией о правах, 
+          | а также предоставляю 
+          a(href="#").link согласие на обработку персональных данных 
+          | на указанных в нем условиях.
+    .required--sbmt.btn.form-input__item Зарегистрироваться
+    button(data-href="./popup-b2b-login.html" data-class="mfp-fade mfp-sm form-callback").ajax-form.form-sm__btn <b>Авторизация</b> в личном кабинете

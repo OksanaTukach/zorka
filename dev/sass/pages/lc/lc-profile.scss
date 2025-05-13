@@ -1,0 +1,26 @@
+.lc-profile {
+  &__block {
+    width: 100%;
+    margin-bottom: toVw(60);
+
+    @include md-block() {
+      margin-bottom: toVw(30);
+    }
+
+    @include sm-block() {
+      margin-bottom: toVw(15);
+    }
+
+    &-title {
+      margin-bottom: toVw(30);
+      font-weight: 500;
+      @include font(25);
+      line-height: 100%;
+      letter-spacing: 0.03em;
+
+      @include sm-block() {
+        @include font(20);
+      }
+    }
+  }
+}

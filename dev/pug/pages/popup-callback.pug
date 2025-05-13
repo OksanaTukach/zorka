@@ -1,0 +1,54 @@
+include ../mixins
+.form
+    .title Написать нам
+    p Для получения оперативной обратной связи воспользуйтесь контактной формой. 
+    p Поля для обязательного заполнения отмечены *
+    form.form-input
+        .form-input__item.w25.required--input.input-text-label
+            label.absl Юр. лицо, наименование
+                span *
+            input(type="text")
+        .form-input__item.w25.required--input.input-text-label.letter--inset
+            label.absl Страна
+                span *
+            input(type="text")
+        .form-input__item.w25.required--input.input-text-label.letter--inset
+            label.absl Город
+                span *
+            input(type="text")
+        .form-input__item.w25.required--input.input-text-label
+            label.absl УНН, УНП, ИНН 
+                span *
+            input(type="text")
+        .form-input__item.w25.required--input.input-text-label
+            label.absl Контактное лицо
+                span *
+            input(type="text")
+        .form-input__item.w25.required--input.input--mask--required.js-phone
+            .input-country
+                label Введите ваш номер
+                    span *
+                select.styler.js-value.no-style
+                    option(data-mask='(99) 999-99-99' data-value='(99) 999-99-99' data-placeholder='(__) ___-__-__' data-img="") +375
+                    option(data-mask='(999) 999-99-99' data-value='(999) 999-99-99' data-placeholder='(___) ___-__-__ ' data-img="" ) +7
+                    option.no-mask Другая
+                input(type='tel' data-mask='(99) 999-99-99' data-placeholder='(__) ___-__-__' placeholder='(__) ___-__-__').input--main.js-value
+                input(type='tel').input--hidden
+        .form-input__item.w25.required--email.input-text-label
+            label.absl Email
+                span *
+            input(type="email" )
+        .form-input__item.w25.input-text-label
+            label.absl Сайт
+            input(type="text")
+        .form-input__item.w100.textarea
+            label Сообщение
+            textarea(rows="4")
+        .form-input__item
+            img(src="./img/content/recaptcha.png" alt="")
+        .form-input__item.required--check
+            label.checkbox
+                input(type="checkbox" name="")
+                span.checkbox-tick
+                span.checkbox-text Я согласен на <a href="" class="link">обработку персональных данных</a>
+        .required--sbmt.btn.form-input__item.w25 Отправить

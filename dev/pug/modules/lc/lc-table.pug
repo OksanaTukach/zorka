@@ -1,0 +1,18 @@
+.lc-table.table
+  table
+    thead
+      th Номер заказа
+      th Дата заказа
+      th Общее количество (шт.)
+      th Общий вес (г.)
+      th
+    tbody
+      -for(let i = 0; i < 7; i++)
+        tr
+          td №596874
+          td 12.12.2021
+          td 50
+          td 250
+          td 
+            a(href="#").link-icon Подробнее о заказе
+              +icon('note')

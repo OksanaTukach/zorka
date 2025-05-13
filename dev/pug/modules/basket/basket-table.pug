@@ -1,0 +1,50 @@
+.basket-table
+  .basket-table__head
+    .basket-table__head-col(data-column="1") Фото и артикул товара
+    .basket-table__product-list
+      .basket-table__head-col(data-column="2") Информация о товаре
+      .basket-table__status-wrap(data-column="3")
+        .basket-table__status
+          .basket-table__head-col Статус
+          .basket-table__head-col Вес (г.)
+          .basket-table__head-col Количество (шт.)
+      .basket-table__head-col(data-column="4") Коментарий
+  .basket-table__tbody
+    -for(let i = 0; i < 2; i++)
+      .basket-table__row
+        .basket-table__body-col(data-column="1")
+          .basket-table__article <span class="black">Артикул:</span> 310625S.9K.R
+          img(src="./img/content/catalog-b2b/catalog-card.png" alt="").basket-table__img
+        .basket-table__product-list
+          -for(let j = 0; j < 3; j++)
+            .basket-table__product
+              .basket-table__body-col(data-column="2")
+                .basket-table__name Кольцо из серебра с бриллиантом, фианитом и лунным камнем
+                .basket-table__info Проба: 375
+                .basket-table__info Размер: 17,5
+              .basket-table__status-wrap(data-column="3")
+                -for(let i = 0; i < 2; i++)
+                  .basket-table__status
+                    .basket-table__body-col
+                      if i == 0
+                        .card-status
+                          img(src="./img/svg/in-stock.svg" alt="")
+                          span В наличии
+                      else
+                        .card-status
+                          img(src="./img/svg/in-progress.svg" alt="")
+                          span В производстве
+                    .basket-table__body-col
+                      span.xxs-visible Размер (г.): 
+                      span  5
+                    .basket-table__body-col
+                      .input-number
+                        button(type="button" onclick="this.nextElementSibling.stepDown()") –
+                        input(type="number" name="" min="0" max="20" value="0")
+                        button(type="button" onclick="this.previousElementSibling.stepUp()") +
+              .basket-table__body-col(data-column="4")
+                .basket-table__product-comment
+                  .form-input__item.input-text-label.textarea
+                    .absl Введите Ваш комментарий
+                    textarea(rows="4")
+              .basket-table__product-remove.js-remove-item

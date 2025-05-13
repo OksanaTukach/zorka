@@ -1,0 +1,44 @@
+header.header#header
+  .header-wrp 
+    .header-burger.js-burger 
+      .wrp 
+        span 
+        span 
+        span
+    .header-logo
+      a(href="./")
+        img.logo(src="img/logo.png")
+    .header-menu__wrp 
+      ul.header-menu
+        li._active 
+          a(href="#") Каталог
+        li
+          a(href="#") О бренде
+        li
+          a(href="#") Новости
+        li
+          a(href="#") Контакты
+    .header-info__wrp 
+      .header-info__btn.header-search__container
+        a(href="./search-b2b.html").js-search
+          .header-info__btn-icon
+            +icon('header-search')
+          span Поиск
+        form(action="").header-search
+          input(type="search" name="" placeholder="Поиск").header-search__input
+          button(type="submit").header-search__submit
+            +icon('header-search')
+      .header-info__btn
+        button(data-href="./popup-b2b-login.html" data-class="mfp-fade mfp-sm form-callback" class="ajax-form")
+          .header-info__btn-icon
+            +icon('header-user')
+          span Личный кабинет
+      .header-info__btn
+        a(href="#")
+          .header-info__btn-icon._has-added-items(data-count="999")
+            +icon('header-basket')
+          span Корзина
+    .header-mob
+      .header-mob__wrp
+        .header-mob__menu
+        //- .header-mob__info

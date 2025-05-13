@@ -1,0 +1,87 @@
+.breadcrumbs{
+	margin-bottom: toVw(25);
+	margin-top: toVw(10);
+	@include xmd-block(){
+		margin-bottom: toVw(10);
+	}
+	span{
+		font-size: toVw(12);
+		line-height: 200%;
+		letter-spacing: 0.02em;
+		font-weight: 500;
+		padding: 0 toVw(8);
+		width: max-content;
+	}
+	a{
+		transition: .3s;
+		span{
+			font-weight: 400;
+			position: relative;
+			&::before {
+				position: absolute;
+				content: '|';
+				font-size: toVw(16);
+				font-weight: 300;
+				line-height: 140%;
+				top: 0;
+				right: toVw(-2);
+				color: $black;
+			}
+		}
+		&:hover{
+			span {
+				color: $hover;
+			}
+		}
+	}
+	&._white {
+		position: absolute;
+		top: toVw(10);
+		padding-left: toVw(20);
+		margin-top: 0;
+		width: calc(100% - 120px);
+		@include xmd-block(){
+			width: calc(100% - 50px);
+		}
+		@include xxs-block(){
+			top: 0;
+			padding-left: 0;
+			left: toVw(7);
+			width: calc(100% - 10px);
+
+		}
+		span {
+			color: white;
+		}
+		a {
+			span {
+				color: white;
+				&::before {
+					color: white;
+				}
+			}
+			&:hover{
+				span {
+					color: $hover;
+				}
+			}
+		}
+		&._bl {
+			span {
+				color: $black;
+			}
+			a {
+				span {
+					color: $black;
+					&::before {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}
+.bx-breadcrumb{
+	display: flex;
+	overflow: auto;
+}

@@ -1,0 +1,30 @@
+@import "./lc-menu.scss";
+@import "./lc-profile.scss";
+@import "./lc-order.scss";
+@import "./lc-table.scss";
+
+.lc {
+  margin-top: toVw(50);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include md-block() {
+    margin-top: toVw(40);
+  }
+
+  @include sm-block() {
+    margin-top: toVw(15);
+  }
+
+  @include xxs-block() {
+    flex-wrap: wrap;
+  }
+
+  &-content {
+    flex-grow: 1;
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: 1px;
+  }
+}

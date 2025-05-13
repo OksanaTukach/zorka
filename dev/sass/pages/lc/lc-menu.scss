@@ -1,0 +1,125 @@
+.lc-menu {
+  width: toVw(430);
+  min-width: toVw(430);
+  border: 1px solid $border;
+  margin-right: toVw(60);
+
+  @include sm-block() {
+    margin-right: toVw(15);
+  }
+
+  @include xxs-block() {
+    width: 100%;
+    min-width: unset;
+    margin: 0 0 toVw(15);
+  }
+
+  &__head {
+    padding: toVw(30);
+    background: $grey;
+    font-weight: 500;
+    @include font(16);
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid $border;
+
+    @include sm-block() {
+      @include font(12);
+    }
+
+    @include xxs-block() {
+      padding: toVw(15);
+    }
+
+    .mobile-acc-btn {
+      right: toVw(15);
+      top: toVw(15);
+    }
+  }
+
+  &__body {
+    padding: toVw(40) toVw(25) toVw(25);
+
+    @include sm-block() {
+      padding: toVw(15);
+    }
+  }
+
+  &__name {
+    margin-bottom: toVw(10);
+    font-weight: 500;
+    @include font(18);
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    @include sm-block() {
+      @include font(14);
+    }
+  }
+
+  &__company {
+    margin: 0 auto toVw(35);
+    font-weight: 500;
+    @include font(16);
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: $second-black;
+
+    @include from($break_sm + 1px) {
+      max-width: toVw(220);
+    }
+
+    @include sm-block() {
+      margin-bottom: toVw(15);
+      @include font(14);
+    }
+  }
+
+  &__links {
+    padding-bottom: toVw(30);
+    border-bottom: 1px solid $border;
+
+    @include sm-block() {
+      padding-bottom: toVw(15);
+    }
+
+    &-item {
+      width: 100%;
+      padding: toVw(15) toVw(15) toVw(15) toVw(50);
+      position: relative;
+      transition: all 0.3s ease-in-out;
+
+      .icon {
+        width: toVw(17);
+        height: toVw(20);
+        position: absolute;
+        left: toVw(15);
+        top: toVw(15);
+        transition: inherit;
+        fill: $second-black;
+      }
+
+      &._active {
+        background-color: rgba(213, 183, 116, 0.15);
+        font-weight: bold;
+        pointer-events: none;
+
+        .icon {
+          fill: $gold;
+        }
+      }
+
+      @include hover() {
+        background-color: rgba(213, 183, 116, 0.15);
+
+        .icon {
+          fill: $gold;
+        }
+      }
+    }
+  }
+}

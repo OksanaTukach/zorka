@@ -1,0 +1,40 @@
+@import "./catalog-filter.scss";
+@import "./catalog-search.scss";
+@import "./catalog-sort.scss";
+@import "./catalog-list.scss";
+@import "./catalog-card.scss";
+
+.catalog {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: toVw(30);
+
+  @include sm-block() {
+    margin-top: toVw(15);
+  }
+
+  @include xxxs-block() {
+    flex-wrap: wrap;
+  }
+
+  &-main {
+    flex-grow: 1;
+  }
+}
+
+.gray-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: toVw(80);
+  padding: toVw(15) toVw(28);
+  background: $grey;
+  border: 1px solid $border;
+
+  @include sm-block() {
+    min-height: unset;
+    padding: toVw(15);
+  }
+}

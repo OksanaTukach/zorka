@@ -1,0 +1,87 @@
+.catalog-sort {
+  align-items: center;
+  margin: 0 -1px -1px 0;
+
+  @include xxs-block() {
+    margin-bottom: toVw(30);
+  }
+
+  &__title {
+    position: relative;
+    margin-right: toVw(30);
+    font-weight: 300;
+    @include font(16);
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    @include xmd-block() {
+      width: 100%;
+      margin: 0 0 toVw(15) 0;
+    }
+
+    @include xxs-block() {
+      margin: 0 0 toVw(15) 0;
+    }
+
+    &::after {
+      @include from($break_xxs + 1px) {
+        content: ':';
+      }
+    }
+  }
+
+  &__item {
+    padding: 0 toVw(10);
+    width: 50%;
+
+    @include xxs-block() {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      @include xxs-block() {
+        margin: 0 0 toVw(15) 0;
+      }
+    }
+
+    &-list {
+      flex-wrap: wrap;
+      flex-grow: 1;
+      margin: 0 toVw(-10);
+
+      @include from($break_xxs + 1px) {
+        display: flex !important;
+      }
+
+      @include xxs-block() {
+        padding-top: 15px;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  &__select {
+    min-width: toVw(250);
+    flex-grow: 1;
+
+    @include xmd-block() {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+
+  & > .catalog-sort__title {
+    font-weight: bold;
+    margin-bottom: 0;
+
+    @include from($break_xxs + 1px) {
+      display: none;
+    }
+  }
+}

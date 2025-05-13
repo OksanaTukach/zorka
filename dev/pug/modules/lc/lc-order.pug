@@ -1,0 +1,17 @@
+-
+  const btns = ['Текущие заказы', 'История заказов'];
+
+.lc-order__head
+  each item, index in btns
+    if index == 0
+      button(data-tab-btn="order-" + index).btn-tab._active #{item}
+    else
+      button(data-tab-btn="order-" + index).btn-tab #{item}
+.lc-order__body
+  each item, index in btns
+    if index == 0
+      .lc-order__tab(data-tab-content="order-" + index)._active
+        include ./lc-table
+    else
+      .lc-order__tab(data-tab-content="order-" + index)
+        include ./lc-table

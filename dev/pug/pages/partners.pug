@@ -1,0 +1,78 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Сотрудничество';
+	- var breadcrumbsMod = '_white';
+
+block content
+	include ../modules/header
+	main
+		.container 
+			include ../modules/breadcrumbs
+			.banner-head(style="background-image: url('./img/content/partners/banner.png');")
+			h1.hide= title
+			.partners.text-page
+				.partners-info.container-sm
+					.text-page__title С кем мы сотрудничаем 
+					p Компания ООО «Зорка» предлагает оптовую продажу: ювелирных изделий, часов мировых брендов, аксессуаров, пишущих принадлежностей, элементов питания и корпоративных подарков
+				.partners-contact.container-sm
+					.text-page__title Наши контакты
+					.partners-contact__wrp 
+						.partners-contact__item 
+							+icon('partners-contact-1')
+							a(href="tel:+375293246666").info  +375 (29) 324-66-66
+						.partners-contact__item 
+							+icon('partners-contact-2')
+							a(href="mailto:Sales@zorkagold.by").info  Sales@zorkagold.by
+						.partners-contact__item 
+							+icon('partners-contact-3')
+							.info Пн-Пт: с 09:00 до 17:00 
+				.banner(style="background-image: url('./img/content/mp-sl-img.png');")
+				.partners-form.container-sm.form
+					.title Оставить заявку онлайн
+					p Для получения оперативной обратной связи воспользуйтесь контактной формой. 
+					p Поля для обязательного заполнения отмечены *
+					form.form-input
+						.form-input__item.w25.required--input.input-text-label
+							label.absl Юр. лицо, наименование
+								span *
+							input(type="text")
+						.form-input__item.w25.required--input.input-text-label.letter--inset
+							label.absl Страна
+								span *
+							input(type="text")
+						.form-input__item.w25.required--input.input-text-label.letter--inset
+							label.absl Город
+								span *
+							input(type="text")
+						.form-input__item.w25.required--input.input-text-label
+							label.absl УНН, УНП, ИНН 
+								span *
+							input(type="text")
+						.form-input__item.w25.required--input.input-text-label
+							label.absl Контактное лицо
+								span *
+							input(type="text")
+						.form-input__item.w25.required--input.input--mask--required.js-phone
+							.input-country
+								label Введите ваш номер
+									span *
+								select.styler.js-value.no-style
+									option(data-mask='(99) 999-99-99' data-value='(99) 999-99-99' data-placeholder='(__) ___-__-__' data-img="") +375
+									option(data-mask='(999) 999-99-99' data-value='(999) 999-99-99' data-placeholder='(___) ___-__-__ ' data-img="" ) +7
+									option.no-mask Другая
+								input(type='tel' data-mask='(99) 999-99-99' data-placeholder='(__) ___-__-__' placeholder='(__) ___-__-__').input--main.js-value
+								input(type='tel').input--hidden
+						.form-input__item.w25.required--email.input-text-label
+							label.absl Email
+								span *
+							input(type="email" )
+						.form-input__item.w25.input-text-label
+							label.absl Сайт
+							input(type="text")
+						.form-input__item.w100.textarea
+							label Сообщение
+							textarea(rows="4")
+						.required--sbmt.btn.form-input__item.w25 Отправить
+	include ../modules/footer
+		

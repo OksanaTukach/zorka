@@ -1,0 +1,270 @@
+.footer {
+  margin-top: auto;
+  border-top: 1px solid $border;
+
+  &-head {
+    border-bottom: 1px solid $border;
+    padding: toVw(25) 0;
+
+    &__wrp {
+      display: flex;
+      justify-content: space-between;
+
+      @include xxs-block() {
+        display: block;
+      }
+    }
+  }
+
+  &-logo {
+    width: toVw(200);
+    margin-top: toVw(10);
+
+    @include xmd-block {
+      margin-bottom: toVw(20);
+      margin-top: 0;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    align-items: flex-start;
+
+    @include xxs-block() {
+      display: block;
+    }
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      width: min-content;
+      padding: 0 toVw(25);
+
+      @include xxs-block() {
+        width: 100%;
+        padding: 0;
+        margin-bottom: toVw(20);
+      }
+
+      &._open {
+        .icon-arr-footer {
+          transform: rotate(180deg)
+        }
+      }
+    }
+
+    &__zag {
+      display: none;
+      font-size: toVw(14);
+      line-height: 179%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      border-bottom: 1px solid $border;
+
+      @include xxs-block() {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .icon {
+        width: toVw(10);
+        fill: $black;
+        transition: .3s;
+      }
+    }
+
+    &__links {
+      @include xxs-block() {
+        margin-top: toVw(26);
+        width: 100%;
+        display: none;
+      }
+
+
+    }
+
+    &__link {
+      width: 100%;
+      font-size: toVw(14);
+      line-height: 179%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: .3s;
+      white-space: nowrap;
+      font-weight: 400;
+      margin-bottom: toVw(4);
+
+      &:hover {
+        color: $hover;
+      }
+
+      @include xxs-block() {
+        font-size: toVw(12);
+      }
+    }
+  }
+
+  &-form {
+    width: toVw(500);
+
+    @include xmd-block() {
+      width: toVw(380);
+    }
+
+    @include xxs-block() {
+      width: 100%;
+      margin-bottom: toVw(30);
+    }
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+
+      input {
+        width: 70%;
+        border: 1px solid $border;
+        box-shadow: none;
+        padding: toVw(10) toVw(15);
+        border-radius: 0;
+      }
+
+      &.input-text-label {
+        .absl {
+          font-size: toVw(14);
+          line-height: 179%;
+          color: #B4B4B4;
+          left: toVw(15);
+          font-weight: 400;
+        }
+      }
+
+      .error {
+        font-size: toVw(10);
+        line-height: 160%;
+        color: $error;
+        position: absolute;
+        bottom: toVw(-18);
+        display: none;
+      }
+
+      &.error-online {
+        input {
+          border-color: $error;
+        }
+      }
+
+      &.error {
+        input {
+          border-color: $error;
+        }
+
+        .error {
+          display: block;
+        }
+      }
+    }
+
+    &__sbmt {
+      width: 30%;
+      background-color: $gold;
+      font-size: toVw(14);
+      line-height: 179%;
+      color: #FFFFFF;
+      transition: .3s;
+      border: none;
+      box-shadow: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover;
+      }
+    }
+
+    &__zag {
+      font-size: toVw(14);
+      line-height: 179%;
+      opacity: 0.8;
+      margin-bottom: toVw(12);
+      font-weight: 400;
+    }
+
+  }
+
+  &-info {
+    width: toVw(500);
+
+    &__item {
+      text-align: right;
+      font-size: toVw(14);
+      line-height: 120%;
+      color: $second-black;
+      margin-bottom: toVw(13);
+      font-weight: 400;
+
+      &:first-child {
+        @include md-block() {
+          text-align: right;
+        }
+
+        @include xmd-block() {
+          text-align: left;
+        }
+      }
+
+      @include xmd-block() {
+        text-align: left;
+        font-size: toVw(12);
+      }
+    }
+
+    @include md-block() {
+      width: toVw(400);
+    }
+
+    @include xmd-block() {
+      width: toVw(220);
+    }
+
+    @include xxs-block() {
+      width: 100%;
+    }
+  }
+
+  &-bot {
+    background-color: $grey;
+
+    &__wrp {
+      display: flex;
+      justify-content: space-between;
+      padding: toVw(11) 0;
+
+      @include xxs-block() {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    &__text {
+      span {
+        font-size: toVw(14);
+        line-height: 120%;
+        color: $second-black;
+        font-weight: 400;
+      }
+    }
+
+    &__medialine {
+      font-size: toVw(14);
+      color: $second-black;
+      line-height: 120%;
+      font-weight: 400;
+
+      .black,
+      a {
+        font-weight: 500;
+        margin-left: toVw(5);
+      }
+    }
+  }
+}

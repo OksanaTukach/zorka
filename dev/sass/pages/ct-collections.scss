@@ -1,0 +1,33 @@
+.collections {
+    &-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: toVw(20);
+        grid-row-gap: toVw(20);
+        margin-top: toVw(20);
+        @include xmd-block(){
+            grid-column-gap: toVw(15);
+            grid-row-gap: toVw(15);
+            margin-top: toVw(15);
+        }
+        @include xxs-block(){
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    &-item {
+        overflow: hidden;
+        .img {
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: .6s;
+            padding-bottom: 100%;
+        }
+        &:hover {
+            .img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

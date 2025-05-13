@@ -1,0 +1,90 @@
+.contact {
+    &-info {
+        display: flex;
+        border: 1px solid $border;
+        flex-wrap: wrap;
+        &._map {
+            .contact-info__wrp {
+                width: 22%;
+                @include xmd-block() {
+                    width: 50%;
+                }
+                @include xxs-block() {
+                    width: 100%;
+                }
+            }
+            .contact-map {
+                width: 56%;
+                @include xmd-block() {
+                    width: 100%;
+                    height: toVw(420);
+                    @include xxs-block() {
+                        position: relative;
+                        width: calc(100% + 30px);
+                        margin: -16px;
+                    }
+                }
+            }
+        }
+        &__wrp {
+            width: calc(100% / 3);
+            padding: toVw(30) toVw(35) toVw(35) toVw(40);
+            border-left: 1px solid $border;
+            @include xxs-block() {
+                width: 100%;
+                border: none;
+                border-top: 1px solid $border;
+                padding: toVw(30) toVw(25) toVw(30) toVw(25);
+            }
+            &:first-child {
+                border: none;
+            }
+            .title {
+                font-size: toVw(20);
+                line-height: 140%;
+                letter-spacing: 0.03em;
+                margin-bottom: toVw(25);
+            }
+        }
+        &__item {
+            margin-bottom: toVw(25);
+            .name {
+                font-size: toVw(14);
+                line-height: 140%;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+                opacity: 0.8;
+                margin-bottom: toVw(10);
+            }
+            .person {
+                margin-bottom: toVw(6);
+                font-weight: 500;
+                @include font(16);
+                line-height: 140%;
+            }
+            p {
+                font-size: toVw(16);
+                line-height: 140%;
+                letter-spacing: 0.03em;
+                a {
+                    color: $black;
+                    transition: 0.3s;
+                    &:hover {
+                        color: $hover;
+                    }
+                }
+            }
+        }
+    }
+
+    &-map {
+        .ymaps-2-1-79-map {
+            @include xxs-block() {
+                width: 100vw !important;
+            }
+        }
+        [class*="ymaps-2"][class*="-ground-pane"] {
+            -webkit-filter: grayscale(100%) !important;
+        }
+    }
+}

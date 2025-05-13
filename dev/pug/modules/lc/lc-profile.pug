@@ -1,0 +1,64 @@
+.lc-profile
+  .lc-profile__block
+    .lc-profile__block-title Персональные данные
+    form(action="").form-input
+      .form-input__item.w33.required--input
+        p Наименование юр. лица
+        input(type="text" value="ООО «ЗИКО»")
+      .form-input__item.w33.required--input
+        p Страна
+        input(type="text" value="Республика Беларусь")
+      .form-input__item.w33.required--input
+        p Город
+        input(type="text" value="Минск")
+      .form-input__item.w33.required--input
+        p УНП, ИНН
+        input(type="text" value="100006896")
+      .form-input__item.w33.required--input
+        p ФИО контактного лица
+        input(type="text" value="Коваленко Екатерина Николаевна")
+      .form-input__item.w33.required--input.input--mask--required.js-phone
+        p Телефон
+        .input-country
+          select.styler.js-value.no-style
+            option(data-mask='(99) 999-99-99' data-value='(99) 999-99-99' data-placeholder='(__) ___-__-__' data-img="") +375
+            option(data-mask='(999) 999-99-99' data-value='(999) 999-99-99' data-placeholder='(___) ___-__-__ ' data-img="" ) +7
+            option.no-mask Другая
+          input(type='tel' data-mask='(99) 999-99-99' data-placeholder='(__) ___-__-__' placeholder='(__) ___-__-__').input--main.js-value
+          input(type='tel').input--hidden
+      .form-input__item.w33.required--input
+        p Email
+        input(type="email" value="info_help@ziko.by")
+      .form-input__item.w33.required--input
+        p Сайт
+        input(type="text" value="ziko.by")
+      .form-input__item.w33.required--input
+        p Почтовый адрес
+        input(type="text" value="Почтовый адрес")
+      .form-input__item.w33.required--input
+        p Юридический адрес
+        input(type="text" value="Юридический адрес")
+      .form-input__item._no-text-label.w33
+        input(type="submit" value="Сохранить все изменения").form-input__btn.required--sbmt
+  .lc-profile__block
+    .lc-profile__block-title Прикрепленные документы
+    ul.doc-list
+      each item, index in docList
+        li
+          .doc-list__item
+            img(src="./img/content/lc-b2b/doc-" + index + '.svg' alt="").doc-list__img
+            .doc-list__name #{item}
+            .doc-list__desc Небольшое описание документа, чтобы пользователь понимал, какая информация в нем содержится
+            .doc-list__link
+              a(href="#" download).link-dotted Скачать документ
+  .lc-profile__block
+    .lc-profile__block-title Изменить пароль
+    form(action="").form-input.required--password
+      .form-input__item.w33.required--input.password-first
+        p Старый пароль
+        input(type="password" placeholder="Введите Ваш старый пароль")
+      .form-input__item.w33.required--input.password-second
+        p Новый пароль
+        input(type="password" placeholder="Введите Ваш новый пароль")
+      .form-input__item._no-text-label.w33
+        input(type="submit" value="Сохранить новый пароль").form-input__btn.required--sbmt

@@ -1,0 +1,26 @@
+include ../mixins
+
+.form.form-sm
+  .title Войти в оптовый каталог
+  .form-sm__desc Нет учетной записи?
+    button(data-href="./popup-b2b-registration.html" data-class="mfp-fade mfp-sm" class="link ajax-form" ) Зарегистрироваться
+  form(action="") 
+    .form-input__item-icon
+      .form-input__icon
+        +icon('mail')
+      .form-input__item.required--input.input-text-label
+        label.absl Email (Логин)
+          span *
+        input(type="text")
+    .form-input__item-icon
+      .form-input__icon
+        +icon('key')
+      .form-input__item.required--input.input-text-label
+        label.absl Пароль
+          span *
+        input(type="password")
+    button(data-href="./popup-b2b-password.html" data-class="mfp-fade mfp-sm" class="link link-underline ajax-form" ) Забыли пароль?
+    br
+    br
+    .required--sbmt.btn.form-input__item Войти
+  p * Обязательные для заполнения поля
